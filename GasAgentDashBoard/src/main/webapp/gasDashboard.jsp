@@ -119,7 +119,7 @@ tr:hover { background-color: #f1f1f1; }
     <input type="text" name="regNo" placeholder="Registration Number" required>
     <input type="text" name="address" placeholder="Address" required>
     <input type="text" name="phone" placeholder="Phone Number" required>
-    <input type="number" name="payment" placeholder="Payment (₹)" required>
+    <input type="number" name="payment" placeholder="Payment" required>
     <input type="date" name="bookingDate" required>
     <button type="submit">Add Booking</button>
   </form>
@@ -141,7 +141,7 @@ tr:hover { background-color: #f1f1f1; }
       <%
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gasdb", "root", "password");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gasdb", "root", "mprathamsql1810");
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery("SELECT * FROM booking ORDER BY booking_date DESC");
 
@@ -153,7 +153,7 @@ tr:hover { background-color: #f1f1f1; }
                 <td><%= rs.getString("reg_no") %></td>
                 <td><%= rs.getString("address") %></td>
                 <td><%= rs.getString("phone") %></td>
-                <td>₹<%= rs.getDouble("payment") %></td>
+                <td><%= rs.getDouble("payment") %></td>
                 <td><%= rs.getDate("booking_date") %></td>
               </tr>
       <%
