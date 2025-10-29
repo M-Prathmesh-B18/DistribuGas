@@ -9,12 +9,15 @@ import com.Connections.*;
  
 public class FirstDemo {
 
+	 
+		 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
           System.out.println("hello w");
+          Connection con = CreateConnections.GetConncection();
            
           try {
-        	Connection  con=CreateConnections.GetConncection();
+        	 
 			PreparedStatement stmt =con.prepareStatement("select*from booking");
 			ResultSet rs=stmt.executeQuery();
 			while(rs.next()) {

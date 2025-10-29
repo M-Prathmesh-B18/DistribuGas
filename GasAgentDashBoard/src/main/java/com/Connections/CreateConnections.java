@@ -11,8 +11,9 @@ public class CreateConnections {
 	  Connection conn=null;
 	  try {
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/gasdb","root","mprathamsql1810");
+		  conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/gasdb","root","mprathamsql1810");
 		System.out.println("connection is establlished");
+		
 	} catch (ClassNotFoundException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
@@ -20,6 +21,7 @@ public class CreateConnections {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
-	  return conn;
+	   
+	return conn;
   }
 }
